@@ -1,0 +1,17 @@
+/* CSS Document */
+.header{ height:105px; width:1349px; background-color:#4491cf; margin:0 auto; }
+.header .logo{ float:left; width:182px; height:64px; margin-top:24px; margin-left:172px; background:url(../images/logo1.png) no-repeat center; position:relative;}
+.header .search{ width:210px;  height:25px; margin:0 170px 80px 980px; position:absolute;}
+.header .s_1 { float:left; width:130px; height:20px; color:#000000;}
+.header .s_1 input{ height:23px;}
+.header .s_2 { float:left; width:80px; height:20px;}
+.header .header_letter{ float:right; width:420px; height:35px; margin-right:170px; margin-top:70px; }
+.header .header_letter li{ width:90px; height:35px; float:left; padding:0 5px; font-size:14px; font-weight:bold; text-align:center; }
+.ad{ width:1349px; height:425px; background:url(../images/ad.png) no-repeat center; margin:0 auto;}
+.blank{ height:70px; background-color:#FFFFFF; }
+.content{width:1100px; overflow:hidden;  margin:0 auto;}
+.content li{ width:322px; height:160px; float:left; padding:0 5px; text-align:center; overflow:hidden;}
+.foot{height:176px; width:1349px; background:#4593d0; margin:0 auto; }
+.foot .left{ width:552px; height:176px; float:left; margin-left:80px;}
+.foot .left ul{ width:70px; float:left; padding:0 5px; margin-top:30px; margin-left:50px;}
+.foot .right{ width:600px; height:40px; float:left; margin-left:50px; margin-top:100px;}
