@@ -1,0 +1,86 @@
+ hr{ font-size:5px;}
+ body{ margin:0px; padding:0px;}
+ div{}
+.header{ height:148px; background-color:eae6e3; overflow:hidden; 
+
+}
+.logo{ width:264px; height:118px; float:left;margin:24px 0 0 468px; background:url(images/logo.jpg) no-repeat center ;}
+
+.header .home{  float:left; margin:80px 0 0 140px; overflow:hidden; }
+
+.header li { width:74px; height:30px;  float:left;  font-size:14px;}
+.ad{ width:1920px; height:600px; margin:0 auto;  background:url(images/ad.jpg) no-repeat center; }
+.content{ overflow:hidden; margin:0 auto; }
+.content .bannerone{ height:470px;width:993px;background:url(images/首页莎士丹_12.jpg) no-repeat center;margin:0 auto; }
+.content .blank{ width:993px; height:16px; margin:0 auto; background-color:#FFFFFF;}
+.content .bannertwo{ width:993px; height:212px; overflow:hidden;margin:0 auto; }
+.content .bannertwo .cone{ width:331px; height:212px; float:left; background:url(images/c1.jpg) no-repeat center;}
+.content .bannertwo .ctwo{width:331px; height:212px; float:left; background:url(images/c1.jpg) no-repeat center;}
+.content .bannertwo .cthree{width:331px; height:212px; float:left; background:url(images/c3.jpg) no-repeat center;}
+.content .bannerthree{ width:993px; height:476px; margin:0 auto; background:url(images/c4.png) no-repeat center;}
+.content .black{ width:993px; height:20px; margin:0 auto; background-color:#000000;}
+.content .taobao{ width:993px; height:250px; overflow:hidden; margin:0 auto; background-color:f0eff1; }
+.taobao .pay1{ width:150px; height:250px; float:left; margin:0px 0px 0px 2px;}
+.taobao .big_text{ font-size:24px;}
+.taobao .pay2{width:150px; height:250px; float:left; }
+.taobao .pay3{width:150px; height:250px; float:left;}
+.taobao .pay4{width:150px; height:250px; float:left;}
+.taobao .blank_1{ width:10px; height:250px; float:left;}
+.taobao .center{ width:190px; height:250px; float:left;}
+.center .logo_tb{ width:159px; height:74px; background:url(images/首页莎士丹_34.jpg) no-repeat center;}
+.center .server_tb p{ font-size:20px;color:9f9f9f; margin-top:0px;}
+.taobao_letter{ overflow:hidden; margin-top:-21px;}
+.l1{ font-size:14px; color:999999; height:14px;float:left;}
+.logo_tb2{ float:left;margin-top:16px; width:14px; height:14px; background:url(images/首页莎士丹_42.jpg) no-repeat center; display:block;}
+.server_tb2 { float:left;font-size:16px;color:9f9f9f; margin-top:30px; width:190px; height:20px;}
+.server_tb2 p{ float:left;}
+.l2{ font-size:14px; color:999999; height:14px;float:left; }
+.taobao .card{ float:left; width:175px; }
+.card .sg{ float:left; width:175px; height:91px; background:url(images/首页莎士丹_32.jpg) no-repeat center;}
+.card_1{ float:left; width:108px; height:130px; background:url(images/首页莎士丹_39.jpg) no-repeat center;}
+.phone{ float:left; width:60px; height:74px; background:url(images/首页莎士丹_45.jpg) no-repeat center; margin-top:50px;}
+.blank{ width:993px; height:16px; margin:0 auto; background-color:#FFFFFF;}
+.product{ overflow:hidden;  margin:0 auto;  }
+.ad_long{  height:100px; background:url(images/首页莎士丹_50.jpg) no-repeat center; margin:0 auto;}
+.p1{ overflow:hidden; width:993px; height:605px;margin:0 auto; }
+.p1_1{ width:290px; height:605px; float:left; background:url(images/p1.jpg) no-repeat center;}
+.p1_2{ width:227px; height:302px; float:left;background:url(images/p2.jpg)  no-repeat center;}
+.p1_3{ width:227px; height:302px; float:left;background:url(images/p3.jpg)  no-repeat center;}
+.p1_4{ width:227px; height:302px; float:left; background:url(images/p4.jpg) no-repeat center;}
+.p1_5{ width:227px; height:302px; float:left;background:url(images/p5.jpg)  no-repeat center;}
+.p1_6{ width:227px; height:302px; float:left;background:url(images/p6.jpg)  no-repeat center;}
+.p1_7{ width:227px; height:302px; float:left; background:url(images/p7.jpg) no-repeat center;}
+
+.p2{ overflow:hidden; width:993px;margin:0 auto; }
+.p2_1{ width:290px; height:610px; float:left; background:url(images/p2_1.jpg) no-repeat center;}
+.p2_2{ width:227px; height:325px; float:left;background:url(images/p2_2.jpg)  no-repeat center;}
+.p2_3{ width:227px; height:325px; float:left;background:url(images/p2_3.jpg)  no-repeat center;}
+.p2_4{ width:227px; height:325px; float:left; background:url(images/p2_4.jpg) no-repeat center;}
+.p2_5{ width:227px; height:325px; float:left;background:url(images/p2_5.jpg)  no-repeat center;}
+.p2_6{ width:227px; height:325px; float:left;background:url(images/p2_6.jpg)  no-repeat center;}
+.p2_7{ width:227px; height:325px; float:left; background:url(images/p2_7.jpg) no-repeat center;}
+
+.p3{ overflow:hidden; width:993px;margin:0 auto; }
+.p3_1{ width:290px; height:610px; float:left; background:url(images/p3_1.jpg) no-repeat center;}
+.p3_2{ width:227px; height:325px; float:left;background:url(images/p3_2.jpg)  no-repeat center;}
+.p3_3{ width:227px; height:325px; float:left;background:url(images/p3_3.jpg)  no-repeat center;}
+.p3_4{ width:227px; height:325px; float:left; background:url(images/p3_4.jpg) no-repeat center;}
+.p3_5{ width:227px; height:325px; float:left;background:url(images/p3_5.jpg)  no-repeat center;}
+.p3_6{ width:227px; height:325px; float:left;background:url(images/p3_6.jpg)  no-repeat center;}
+.p3_7{ width:227px; height:325px; float:left; background:url(images/p3_7.jpg) no-repeat center;}
+
+.p4{ overflow:hidden; width:993px;margin:0 auto; }
+.p4_1{ width:290px; height:610px; float:left; background:url(images/p4_1.jpg) no-repeat center;}
+.p4_2{ width:227px; height:325px; float:left;background:url(images/p4_2.jpg)  no-repeat center;}
+.p4_3{ width:227px; height:325px; float:left;background:url(images/p4_3.jpg)  no-repeat center;}
+.p4_4{ width:227px; height:325px; float:left; background:url(images/p4_4.jpg) no-repeat center;}
+.p4_5{ width:227px; height:325px; float:left;background:url(images/p4_5.jpg)  no-repeat center;}
+.p4_6{ width:227px; height:325px; float:left;background:url(images/p4_6.jpg)  no-repeat center;}
+.p4_7{ width:227px; height:325px; float:left; background:url(images/p4_7.jpg) no-repeat center;}
+
+.footer{ width:993px; height:154px; margin:0 auto; background-color:e9e5e2;}
+.logo2{ width:306px; height:154px; float:left; background:url(images/logo2.jpg) no-repeat center;}
+.kouhao{ width:246px; height:134px; float:left; margin-top:20px; background:url(images/foot1.jpg) no-repeat center;}
+.back{ width:440px; height:78px; float:left; margin-top:0px; background:url(images/back.png) no-repeat center;
+}
+.time{ width:437px; height:76px; float:left; background:url(images/首页莎士丹_181.jpg) no-repeat center;}
