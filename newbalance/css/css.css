@@ -1,0 +1,41 @@
+.header{ height:56px; background-color:#232323;}
+.top{height: 56px; width:1349px; margin:0 auto;}
+.top .logo{width: 147px;height: 56px; float:left; background:url(../images/NB_01.png) no-repeat center;}
+.top .nav { overflow:hidden; height:56px; float:left;}
+.sex_{  float:left;  color:#FFFFFF; font-size:16px; margin:20px 30px; }
+.shoe{ width:52px; height:20px; float:left; background:url(../images/NB_06.png) no-repeat center; margin:5px 0px;}
+.search{ overflow:hidden; float:left;}
+.search input{ width:300px; height:32px;  margin:10px 0px 10px 200px;}
+.search_logo{ width:57px; height:34px; float:left; background:url(../images/images/search_03.png) no-repeat center; margin:10px 10px 10px 0px; }
+.nav_2{ overflow:hidden;float:left;  color:#FFFFFF; font-size:16px; margin:0px 0px 0px 69px; text-align:center; }
+.nav_2 span{width:39px; height:56px; float:left; background:url(../images/NB_03.png) no-repeat center;}
+.nav_2 p{float:left; color:#FFFFFF; font-size:16px;margin:18px 10px;}
+.ad_container{ height:474px; background-color:cecdc9;}
+.ad_container .ad{ width:100%; height:474px; background:url(../images/NB_12.png) no-repeat center; margin:0 auto;}
+.blank{ width:340px; height:50px; background-color:#FFFFFF;  margin:0 auto; }
+.blank p{ float:left;color:#000000; width:200px; font-size:18px; font-weight:bold; padding:0 5px; text-align:center; margin:12px 25px 12px 0px; }
+.blank .weibo{ float:left; width:25px; height:23px; background:url(../images/NB_15.png) no-repeat center;margin:12px 12px;}
+.blank .weixin{ float:left; width:23px; height:23px; background:url(../images/NB_17.png) no-repeat center; margin:12px 12px;}
+.content{ height:1442px; background-color:#cecdc9; margin:0 auto;}
+.content .bodyy{ margin:0 auto; width:1095px; height:1442px;}
+.bodyy .p_1{ float:left; width:522px; height:286px; background:url(../images/p_1.png) no-repeat center; margin:0 12px 16px 12px;}
+.bodyy .p_2{ float:left; width:522px; height:286px; background:url(../images/p_4.png) no-repeat center; margin:0 12px 16px 12px;;}
+.bodyy .p_3{ float:left; width:522px; height:286px; background:url(../images/p_2.png) no-repeat center;margin:16px 12px;}
+.bodyy .p_4{ float:left; width:522px; height:286px; background:url(../images/p_5.png) no-repeat center;margin:16px 12px;}
+.bodyy .p_5{ float:left; width:522px; height:286px; background:url(../images/p_3.png) no-repeat center;margin:16px 12px;}
+.bodyy .p_6{ float:left; width:522px; height:286px; background:url(../images/p_6.png) no-repeat center; margin:16px 12px;}
+.bodyy .p_7{ float:left; width:521px; height:456px; background:url(../images/p_7.png) no-repeat center; margin:16px 0 30px 12px;  }
+.bodyy .p_8{ float:left; width:548px; height:456px; background:url(../images/p_8.png) no-repeat center; margin:16px 0 30px 0; }
+.info{ width:983px; height:130px; margin:0 auto;  margin-bottom:0px;}
+.info .infoin{ float:left; margin:  30px 50px;}
+.info .infoin li{ width:160px; font-size:12px; color:#000000; font-weight:bold;}
+.info .infoin_x{ float:left; margin:30px 20px;}
+.info .infoin_x li{ width:200px; font-size:12px; color:#FF0000; font-weight:bold;}
+.info .infoin_f{ float:left; margin:30px 50px 65px 10px;}
+.info .infoin_f li{ width:160px; font-size:12px; color:#000000; font-weight:bold;}
+hr{ overflow:hidden;}
+.foot_c{ height:42px;width:1349px; background:#FFFFFF; margin:0 auto; position:relative; }
+.foot_c .foot{  height:42px; position:absolute; }
+.foot .l_1{ width:124px; height:17px;margin:0 105px 0px 300px;float:left; color:black;  font-size:12px; font-weight:bold;}
+.foot .ggg{ width:152px; height:19px; float:left; color:black;  font-size:14px; font-weight:bold;}
+.foot span{ width:40px; height:42px;float:left;margin:0 0px 0px 120px;  ; background:url(../images/logogo.png) no-repeat center;}
