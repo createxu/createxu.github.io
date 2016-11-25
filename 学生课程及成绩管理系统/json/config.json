@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "type": "人事管理",
+    "code": 1,
+    "url": null,
+    "parent": null
+  },
+  {
+    "id": 2,
+    "type": "采购信息",
+    "code": 2,
+    "url": null,
+    "parent": null
+  },
+  {
+    "id": 3,
+    "type": "财务明细",
+    "code": 3,
+    "url": null,
+    "parent": null
+  },
+  {
+    "id": 4,
+    "type": "学生基本信息",
+    "code": 1001,
+    "url": "#/baseInfo",
+    "parent": 1
+  },
+  {
+    "id": 6,
+    "type": "学生荣誉/违纪记录",
+    "code": 1003,
+    "url": "#/jcRecord",
+    "parent": 1
+  },
+  {
+    "id": 7,
+    "type": "课程基本信息",
+    "code": 2001,
+    "url": "#/buyInfo",
+    "parent": 2
+  },
+  {
+    "id": 8,
+    "type": "选课基本信息",
+    "code": 2002,
+    "url": "#/material",
+    "parent": 2
+  },
+  {
+    "id": 9,
+    "type": "学生单科成绩信息",
+    "code": 3001,
+    "url": "#/income",
+    "parent": 3
+  },
+  {
+    "id": 10,
+    "type": "学生总成绩信息",
+    "code": 3002,
+    "url": "#/revenue",
+    "parent": 3
+  },
+  {
+    "id": 11,
+    "type": "总成绩信息",
+    "code": 10002,
+    "url": "#/deptRevenue",
+    "parent": 10
+  },
+  {
+    "id": 12,
+    "type": "总成绩信息",
+    "code": 10002,
+    "url": "#/salaryRevenue",
+    "parent": 10
+  }
+]

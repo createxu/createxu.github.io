@@ -1,0 +1,172 @@
+<style>
+ 
+.myheader{
+	background-color:#AAE4EF
+}
+table td img{
+	width:40px;
+	height:40px;
+
+}
+table tr td{
+	text-align:center;
+	font-size:15px;
+	text-decoration-color: red;
+
+}
+div span img{
+	width:46px;
+	height:46px
+}
+.option_buttons{
+	margin-top:10px;
+	}
+.butInfo_table{
+	overflow-y:scroll;
+	height:330px
+	}
+.mybtns{
+	font-size:14px
+}
+.butInfo_table{
+	font-style: '宋体';
+	background-image:url(images/书本3.jpg)}
+
+
+
+</style>
+
+<!--搜索框-->
+<div class="collapse navbar-collapse">
+    <form action="javascript:void(0)" class="navbar-form navbar-left">
+        <div class="form-group">
+            <select name="" class="form-control" ng-model="foodData.modal.key">
+                <option value="">请选择</option>
+                <option value="type">选修课程</option>
+                <option value="place">上课地点</option>
+                <option value="personName">任课老师</option>
+            </select>
+            <input type="text" class="form-control" placeholder="搜索课程" ng-model="foodData.modal.val"/>
+        </div>
+		<span class="">
+			<img src="images/searchButton1.png" alt="" ng-click="foodData.searchFood()"/>
+		</span>
+    </form>
+</div>
+
+    <!--主页面-->
+<div class="butInfo_table">
+    <table class="table">
+        <thead>
+        <tr>
+            <td>编号</td>
+            <td>选修课程</td>
+            <td>考试类型</td>
+            <td>课程时间(周)</td>
+            <td>上课地点</td>
+            <td>选修人数(s)</td>
+			<td>结课时间(年/月/日)</td>
+            <td>任课老师</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in foodData.foods |filter:foodData.criteria">
+            <td><input type="checkbox" ng-model="item.checked"/></td>
+            <td>{{item.type}}<span class="badge" ng-show="item.days=='最新'?true:false">最新添加</span></td>
+            <td>{{item.save}}</td>
+            <td>{{item.spend}}</td>
+            <td>{{item.place}}</td>
+            <td>{{item.much}}</td>
+			<td>{{item.time}}</td>
+            <td>{{item.personName}}</td>
+            <td><img src="images/changeButton.jpg" alt="" ng-click="foodData.changeFood(item.id)"/></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!--添加、删除按钮-->
+
+<div class="btn-group option_buttons">
+		<button class="button button-plain button-pill button-small button-3d button-raised button-longshadow mybtns" ng-click="foodData.showAddUpd()">添加</button>
+		<button  class="button button-caution button-pill button-small button-3d button-raised button-longshadow mybtns" ng-click="foodData.delFood()" >删除</button>
+		<button class="button button-caution button-pill button-small button-3d button-royal button-longshadow mybtns" ng-click="foodData.allChecked()">全选</button>
+</div>
+
+
+<!--模态框-->
+<div class="modal fade" id="foodModal" tabindex="-1" >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header myheader">
+					<button class="close" 
+					data-dismiss="modal">&times</button>
+					<h4 class="modal-title">{{foodData.modalTitle}}</h4>
+				</div>
+				<div class="modal-body">
+					 <form action="javascript:void(0)" method="post" name="myform">
+					<div class="input-group {{myform.type.$valid?'has-success':'has-error'}}">
+						<span class="input-group-addon">&nbsp选&nbsp修&nbsp课&nbsp程&nbsp&nbsp</span>
+						<select name="type"  class="form-control" ng-model="foodData.newFood.type" required>
+							<option value="">请选择</option>
+							<option value="高等数学">高等数学</option>
+							<option value="大学语文">大学语文</option>
+							<option value="大学英语">大学英语</option>
+							<option value="C语言设计">C语言设计</option>
+							<option value="计算机基础导论">计算机基础导论</option>
+							<option value="大学舞蹈">大学舞蹈</option>
+							<option value="马克思主义概论">马克思主义概论</option>
+							<option value="现代哲学">现代哲学</option>
+							<option value="马克思主义概论">马克思主义概论</option>
+							<option value="建筑学欣赏">建筑学欣赏</option>
+							<option value="园林设计">园林设计</option>
+						</select>
+					</div>
+						<div class="input-group {{myform.save.$valid?'has-success':'has-error'}}">
+							<span class="input-group-addon">&nbsp考&nbsp试&nbsp类&nbsp型&nbsp&nbsp</span>
+							<input type="text" ng-model="foodData.newFood.save" class="form-control" name="save" required>
+						</div>
+						<div class="input-group {{myform.spend.$valid?'has-success':'has-error'}}">
+							<span class="input-group-addon">课程时间(周)</span>
+							<input type="number" ng-model="foodData.newFood.spend" class="form-control" name="spend" required>
+							<span ng-hide="myform.spend.$valid || myform.spend.$pristine">
+								<em ng-show="myform.spend.$error.required">请输入内容</em>
+								<em ng-show="myform.spend.$error.number">请输入正确的周数</em>
+							</span>
+						</div>
+						<div class="input-group {{myform.splec.$valid?'has-success':'has-error'}}">
+							<span class="input-group-addon">&nbsp上&nbsp课&nbsp地&nbsp点&nbsp&nbsp</span>
+							<input type="text" ng-model="foodData.newFood.place"
+							class="form-control" name="splec" required>
+						</div>
+						<div class="input-group {{myform.much.$valid?'has-success':'has-error'}}">
+							<span class="input-group-addon">&nbsp选&nbsp修&nbsp人&nbsp数&nbsp&nbsp</span>
+							<input type="number" ng-model="foodData.newFood.much"
+							class="form-control" name="much" required>
+							<span ng-hide="myform.much.$valid || myform.much.$pristine">
+								<em ng-show="myform.much.$error.required">请输入数字</em>
+								<em ng-show="myform.much.$error.number">请输入正确的数字</em>
+							</span>
+						</div>
+						<div class="input-group {{myform.time.$valid?'has-success':'has-error'}}">
+							<span class="input-group-addon">&nbsp结&nbsp课&nbsp时&nbsp间&nbsp&nbsp</span>
+							<input type="text" ng-model="foodData.newFood.time"
+							class="form-control" name="time"  placeholder="年/月/日(2015年3月15日)  长度不小于8位" required ng-minlength="8">
+						</div>
+						<div class="input-group {{myform.person.$valid?'has-success':'has-error'}}">
+							<span class="input-group-addon">&nbsp任&nbsp课&nbsp老&nbsp师&nbsp&nbsp</span>
+							<input type="text" ng-model="foodData.newFood.personName"
+							class="form-control" name="person"  placeholder="名字不少于两个字" ng-minlength="2" required>
+						</div>
+				  </form>
+				</div>
+				<div class="modal-footer">
+					<button class="button-pill button-small bgcolor modal_button" ng-click="foodData.option=='add'?foodData.addFood():foodData.changeUpd()" ng-disabled="myform.$invalid">提交</button>
+					 <button class="button-pill button-small bgcolor modal_button" data-dismiss="modal" >关闭</button>
+				</div>
+				
+			</div>
+		</div>
+	
+	</div>
+</div>

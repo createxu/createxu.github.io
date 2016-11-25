@@ -1,0 +1,119 @@
+<style>
+    .reward {
+        width: 50%;
+        height: 300px;
+        float: left;
+    }
+
+    .punishment {
+        width: 49%;
+        height: 300px;
+        float: left;
+    }
+
+    .jcRecord_wrap {
+        margin-top: 30px;
+    }
+
+    .jcRecord_wrap h2 {
+        font-family: "华文细黑"
+    }
+
+    .jcRecord_button {
+        width: 250px;
+        height: 250px;
+        margin-left: 85px;
+        margin-top: 30px;
+    }
+
+    .jcRecord_button:hover {
+        background: #444;
+        color: white;
+    }
+
+    .jcRecord_button:active {
+        background: #333;
+        color: #ccc;
+    }
+
+    .jcRecord_button span {
+        font-size: 150px;
+    }
+
+    .jcRecord_wrap h2 {
+        margin-left: 150px;
+        color: white;
+    }
+
+    .punishment h2 {
+        margin-left: 130px;
+    }
+
+    .jcRecord_hr {
+        width: 1px;
+        height: 400px;
+        background: white;
+        float: left;
+    }
+    .jcRecord_hr{
+        background: background-image:url(images/background1.jpg)
+    }
+</style>
+<script>
+    $(function () {
+        $(".jcRecord_wrap").hide().fadeIn();
+        $("#reward").on("click", function () {
+            $(".reward_logo").fadeOut();
+            $(".reward_table").fadeIn();
+        });
+        $("#punishment").on("click", function () {
+            $(".punishment_logo").fadeOut();
+            $(".punishment_table").fadeIn();
+        })
+    })
+</script>
+<div class="jcRecord_wrap">
+    <div class="reward">
+        <div class="reward_logo">
+            <button class="button jcRecord_button button-raised button-glow button-circle" id="reward">
+                <span class="glyphicon glyphicon-gift"></span></button>
+            <h2>Reward</h2>
+        </div>
+        <div class="reward_table" style="display:none">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td>姓名</td>
+                    <td>荣誉奖项</td>
+                    <td>时间</td>
+                </tr>
+                <tr ng-repeat="item in jcRecord.jcRecords_reword">
+                    <td>{{item.name}}</td>
+                    <td>{{item.keyWords}}</td>
+                    <td>{{item.time}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="jcRecord_hr"></div>
+    <div class="punishment">
+        <div class="punishment_logo">
+            <button class="button jcRecord_button button-raised button-glow button-circle" id="punishment">
+                <span class="glyphicon glyphicon-fire"></span></button>
+            <h2>Punishment</h2>
+        </div>
+        <div class="punishment_table" style="display:none">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td>姓名</td>
+                    <td>违纪情况</td>
+                    <td>时间</td>
+                </tr>
+                <tr ng-repeat="item in jcRecord.jcRecords_punishment">
+                    <td>{{item.name}}</td>
+                    <td>{{item.keyWords}}</td>
+                    <td>{{item.time}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

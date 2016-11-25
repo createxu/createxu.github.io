@@ -1,0 +1,205 @@
+* {
+    list-style-type: none;
+}
+
+body {
+    background-image: url(../images/background.jpg)  ;
+    -webkit-animation: myfirst 1s infinite alternate linear;
+    -moz-animation: myfirst 1s infinite alternate linear;
+
+}
+
+@-moz-keyframes myfirst /*firefox*/
+{
+    from {
+        background-position: 0 0
+    }
+    to {
+        background-position: 0 -5px;
+    }
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+    from {
+        background-position: 0 0
+    }
+    to {
+        background-position: 0 -5px;
+    }
+}
+
+
+.head {
+    padding-bottom: 70px;
+
+}
+
+.title {
+    color: white;
+    font-size: 50px;
+    font-family: '华文细黑';
+    display: inline;
+    background: transparent;
+    text-shadow: 0 5px 5px black;
+    float: right;
+}
+
+.body a {
+    color: white;
+    font-size: 20px
+}
+
+.body a:hover {
+    text-decoration: none;
+    color: #7C8DC1
+}
+
+.mother {
+    font-size: 25px;
+}
+
+.ul {
+    position: relative;
+    right: 40px;
+    width: 300px;
+    opacity: 0.7
+}
+
+li {
+    border-bottom: 1px solid white
+}
+
+.ul li a {
+    margin-left: 50px
+}
+
+.biaoqian {
+    margin-left: 80px;
+    background: white;
+    color: black
+}
+
+.tab {
+    border-bottom: 1px solid white
+}
+
+.panel {
+    background: url(images/background1);
+    margin-bottom: 0
+}
+
+.tubiao {
+    margin-right: 10px
+}
+
+#content {
+    border: 2px solid white;
+    background: transparent;
+    height: 450px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px black
+}
+
+#accordion {
+    border: 1px solid white;
+    background: transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black
+}
+
+#head {
+    display: inline-block;
+    border: 3px solid white;
+    height: 100px;
+    position: absolute;
+    margin-right: 600px;
+    top: 17px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px black;
+    float: left;
+    margin: 0 auto;
+}
+
+#head img {
+    width: 160px;
+    height: 60px;
+    margin: 5px 0 0 5px;
+}
+
+.style {
+    position: absolute;
+    left: 1285px;
+}
+
+.head1 {
+    float: left
+}
+
+#username {
+    color: white;
+    position: relative;
+    top: 54px;
+    right: 70px;
+    font-family: Calibri;
+    font-weight: 600;
+}
+
+hr {
+    border: none;
+    background: white;
+    height: 2px;
+    width: 880px;
+    position: relative;
+    right: 130px;
+}
+
+h2 {
+    display: inline-block;
+    color: #238442;
+}
+
+.ts {
+    font-size: 50px;
+    font-style: italic;
+}
+
+.time {
+    float: left;
+    position: relative;
+    top: -20px;
+    right: 40px;
+}
+
+h3 {
+    color: #DDF6F2;
+    position: relative;
+    top: -25px;
+}
+
+h3 span {
+    color: #E4E267;
+    font-style: italic;
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+.bgcolor {
+    background: #8BCCE0;
+    color: white
+}
+
+.option_button {
+    margin-top: 10px;
+}
+
+.changeTheme {
+    border-radius: 5px;
+    border: 3px solid white;
+    margin-top: 10px;
+    box-shadow: 0 5px 10px black;
+}
+
+.item img:hover {
+    cursor: pointer;
+}

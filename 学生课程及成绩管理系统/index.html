@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/Manner_index.css">
+    <!--导入日历插件-->
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <!--*********导入模块化文件******-->
+    <script src="app.js"></script>
+    <script src="loads/employee/baseInfo.js"></script>
+    <script src="loads/employee/positionCha.js"></script>
+    <script src="loads/employee/jcRecord.js"></script>
+    <script src="loads/purchase/buyInfo.js"></script>
+    <script src="loads/purchase/material.js"></script>
+    <script src="loads/finance/income.js"></script>
+    <script src="loads/finance/revenue.js"></script>
+    <script>
+        $(function(){
+            //设置当前日期显示在页面
+            var date = new Date().toUTCString().split(" ");
+            $(".time h2 span:eq(0)").text(date[2].slice(0,1));
+            $(".time h2 span:eq(1)").text(date[2].slice(1));
+            $(".time h3 span:eq(0)").text(date[0]);
+            $(".time h3 span:eq(1)").text(date[1]);
+            console.log(date);
+            
+            //换肤功能
+            $(".carousel-inner div.item").each(function(index,item){
+                if(index==0){
+                    $(item).on("click",function(){
+                        $("body").css("backgroundImage","url(images/background.jpg)").fadeOut(0).fadeIn();
+                        $(".title").css("background","#01478d");
+                        $("#content").css("background","#01478d");
+                        $("#accordion").css("background","#01478d");
+                        $("#head").css("background","#01478d");
+                        $(".bgcolor").css("background","##01478d");
+                    })
+                }else if(index==1){
+                    $(item).on("click",function(){
+                        $("body").css("backgroundImage","url(images/background1.jpg)").fadeOut(0).fadeIn();
+                        $(".title").css("background","#E25C67");
+                        $("#content").css("background","#E25C67");
+                        $("#accordion").css("background","#E25C67");
+                        $("#head").css("background","#E25C67");
+                        $(".bgcolor").css("background","#E25C67");
+                    })
+                }else if(index==2){
+                    $(item).on("click",function(){
+                        $("body").css("backgroundImage","url(images/background2.jpg)").fadeOut(0).fadeIn();
+                        $(".title").css("background","#DEA76B");
+                        $("#content").css("background","#DEA76B");
+                        $("#accordion").css("background","#DEA76B");
+                        $("#head").css("background","#DEA76B");
+                        $(".bgcolor").css("background","#DEA76B");
+                    })
+                }else if(index==3){
+                    $(item).on("click",function(){
+                        $("body").css("backgroundImage","url(images/background3.jpg)").fadeOut(0).fadeIn();
+                        $(".title").css("background","#DEA76B");
+                        $("#content").css("background","#DEA76B");
+                        $("#accordion").css("background","#DEA76B");
+                        $("#head").css("background","#DEA76B");
+                        $(".bgcolor").css("background","#DEA76B");
+                    })
+                }
+            })
+        })
+    </script>
+</head>
+<body ng-controller="firstCtl">
+<div class="container">
+    <div class="head">
+        <div class="row">
+            <h1 class="title">学生课程及成绩管理系统</h1>
+            <div id="head">
+                <div class="head1">
+                    <a href="javascript:void(0)"><img src="images/head.jpg" class="img-thumbnail"></a>
+                    <span id="username">兰州理工大学 周旭 web1601</span>
+                </div>
+                <div class="time">
+                    <h2><span class="ts"></span><span></span></h2>
+                    <h3><span></span><span></span></h3>
+                </div>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div class="body">
+        <div class="row">
+            <div class="col-lg-3">
+                <div id="accordion">
+                    <div class="panel">
+                        <div class="panel-body tab">
+                            <a data-toggle="collapse" ng-click="data.changeTabs(1)"
+                               data-parent="#accordion"
+                               href="#baseInfo" class="mother">
+                            <span class="glyphicon glyphicon-user tubiao"></span>学生信息管理
+                            <span class="badge biaoqian">2</span></a></div>
+                        <div class="panel-collapse collapse in" id="baseInfo">
+                            <ul class="ul">
+                                <li ng-repeat="item in data.tabs"><a href="{{item.url}}">{{item.type}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body tab">
+                            <a data-toggle="collapse" ng-click="data.changeTabs(2)"
+                               data-parent="#accordion"
+                               href="#buyInfo" class="mother">
+                            <span class="glyphicon glyphicon-shopping-cart tubiao"></span>课程信息管理
+                            <span class="badge biaoqian">2</span></a></div>
+                        <div class="panel-collapse collapse" id="buyInfo">
+                            <ul class="ul">
+                                <li ng-repeat="item in data.tabs"><a href="{{item.url}}">{{item.type}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body tab">
+                            <a data-toggle="collapse" ng-click="data.changeTabs(3)"
+                               data-parent="#accordion"
+                               href="#income" class="mother">
+                            <span class="glyphicon glyphicon-usd tubiao"></span>成绩信息管理
+                            <span class="badge biaoqian">2</span></a></div>
+                        <div class="panel-collapse collapse" id="income">
+                            <ul class="ul">
+                                <li ng-repeat="item in data.tabs"><a href="{{item.url}}">{{item.type}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="changeTheme">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="images/background.jpg">
+                                <div class="carousel-caption">点我换肤</div>
+                            </div>
+                            <div class="item">
+                                <img src="images/background1.jpg">
+                                <div class="carousel-caption">点我换肤</div>
+                            </div>
+                            <div class="item">
+                                <img src="images/background2.jpg">
+                                <div class="carousel-caption">点我换肤</div>
+                            </div>
+                            <div class="item">
+                                <img src="images/background3.jpg">
+                                <div class="carousel-caption">点我换肤</div>
+                            </div>
+                            <div class="item">
+                                <img src="images/background4.jpg">
+                                <div class="carousel-caption">点我换肤</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9" id="content">
+                <div ng-view></div>
+            </div>
+                <img src="images/style.png" class="style">
+        </div>
+    </div>
+</div>
+</body>
+</html>

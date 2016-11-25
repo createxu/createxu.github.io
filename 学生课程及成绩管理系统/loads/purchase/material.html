@@ -1,0 +1,143 @@
+<style type="text/css">
+    table td img {
+        width: 48px;
+        height: 44px;
+    }
+
+    #imgs {
+        width: 36px;
+        height: 34px;
+    }
+
+    .myheader {
+        background-color: #AAE4EF
+    }
+
+    .table_overflow {
+        overflow-y: scroll;
+        height: 370px
+    }
+
+    table tr td {
+        text-align: center;
+        font-size: 14px
+    }
+
+    .mybtn {
+        font-size: 16px
+    }
+
+    .tool-demo {
+        background-image: url(images/书本3.jpg)
+    }
+
+
+</style>
+
+<!--插件显示效果-->
+<script>
+    $(function () {
+        $('.tool-demo').tooltip({
+            selector: "[data-toggle=tooltip]",
+            container: "body"
+        });
+    })
+</script>
+
+<!--搜索框-->
+
+<div class="collapse navbar-collapse">
+    <form action="javascript:void(0)" class="navbar-form navbar-left" ng-submit="foodsData.searchFoods()">
+        <div class="form-group">
+            <select class="form-control" ng-model="foodsData.modal.name">
+                <option value="">请选择</option>
+                <option value="type">选修课程</option>
+                <option value="used">已选人数</option>
+                <option value="sheng">待选人数</option>
+            </select>
+            <input type="text" class="form-control" placeholder="查找" ng-model="foodsData.modal.val"/>
+        </div>
+        <button type="submit"
+                class="button button-pill button-raised button-small  button-action button-longshadow mybtn">
+            Search
+        </button>
+    </form>
+</div>
+<!--内容-->
+<div class="tool-demo">
+    <div class="table_overflow">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>课程</td>
+                <td>选修课程</td>
+                <td>已选人数(人)</td>
+                <td>待选人数(人)</td>
+                <td>修改时间</td>
+                <td>修改</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in foodsData.foods |filter:foodsData.criteria">
+                <td><img src="{{item.img}}" alt=""/></td>
+                <td>{{item.type}}&nbsp&nbsp&nbsp
+                    <a href="javascript:void(0)"
+                       data-toggle="tooltip"
+                       data-placement="right"
+                       title="{{item.introduce}}">
+                        <span class="glyphicon glyphicon-envelope bgcolor small"></span>
+                    </a>
+                </td>
+                <td>{{item.used}}</td>
+                <td>{{item.sheng}}</td>
+                <td>{{item.changeTime}}</td>
+                <td><img src="images/changeButton.jpg" alt="" id="imgs" ng-click="foodsData.showUpd(item.id)"/></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--模态框-->
+<div class="modal fade" id="foodsModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header myheader">
+                <button class="close"
+                        data-dismiss="modal">&times
+                </button>
+                <h4 class="modal-title">修改选修课程选择情况</h4>
+            </div>
+            <div class="modal-body ">
+                <form action="javascript:void(0)" method="post" name="myform">
+                    <div class="input-group {{myform.type.$valid?'has-success':'has-error'}}">
+                        <span class="input-group-addon">选修课程</span>
+                        <input type="text" ng-model="foodsData.newFoods.type" name="type" class="form-control" readonly>
+                    </div>
+                    <div class="input-group {{myform.much.$valid?'has-success':'has-error'}}">
+                        <span class="input-group-addon">选修人数</span>
+                        <input class="form-control" ng-model="foodsData.newFoods.used" name="much" readonly>
+                        <span class="input-group-addon">选修增长人数（人）</span>
+                        <input type="number" ng-model="foo.upUsed" class="form-control" name="much"
+                               placeholder="增长人数不能超过待选人数">
+							<span ng-hide="myform.much.$valid || myform.spend.$pristine">
+								<em ng-show="myform.much.$error.number">请输入正确的增长数字</em>
+							</span>
+                    </div>
+                    <div class="input-group {{myform.sheng.$valid?'has-success':'has-error'}}">
+                        <span class="input-group-addon">待选人数</span>
+                        <input type="" ng-model="foodsData.newFoods.sheng" name="sheng" class="form-control" readonly>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="button-pill button-small  btn-success modal_button"
+                        ng-click="foodsData.changeUsed(foodsData.newFoods.id)">提交
+                </button>
+                <button class="button-pill button-small btn-danger modal_button" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

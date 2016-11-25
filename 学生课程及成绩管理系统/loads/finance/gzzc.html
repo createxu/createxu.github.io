@@ -1,0 +1,123 @@
+<script>
+    $(function () {
+        $(".gzzc").hide().fadeIn();
+    })
+</script>
+<style type="text/css">
+	table td{text-align:center}
+	#allSelect{position:relative;margin-left:24px;float:left}
+	.scroll {height:310px;overflow:auto}
+	.height{height:35px}
+	.table-head{padding-right:17px;background-color:#DFF0D8}
+	.table-body{width:100%;height:280px;overflow:auto}
+	.table-head table,.table-body table{width:100%}
+	.color{background-color:#BBFFEE}
+	.color1{background-image:url(images/淡雅1.jpg)}
+</style>
+<div class="gzzc">
+   <div class="gzzc">
+		<div class="collapse navbar-collapse">
+			<form action="javascript:void(0)" ng-submit="gzzcData.searchInc()" class="navbar-form navbar-left">
+				<div class="form-group">
+					<span>&nbsp;&nbsp;&nbsp;</span>
+					<select name="" class="form-control color" ng-model="gzzcData.modal.key">
+						<option value="">请选择</option>
+						<option value="position">学院</option>
+						<option value="name">名字</option>
+						<option value="salary">在校成绩</option>
+					</select>
+					<input type="text" class="form-control" placeholder="Search" ng-model="gzzcData.modal.val"/>
+				</div>
+				<button type="submit" class="button button-small button-raised
+					button-longshadow button-pill button-inverse button-glow"
+							ng-click="gzzcData.searchGzzc()"><span class="glyphicon glyphicon-search"></span></button>
+			</form>
+		</div>
+		<div style="width:100%" class="color1">
+			<div class="table-head height">
+				<table class="table">
+					<colgroup>
+					   <col class="col-xs-1"/>
+					   <col class="col-xs-2"/>
+					   <col class="col-xs-2"/>
+					   <col class="col-xs-2"/>
+					   <col class="col-xs-2"/>
+					   <col />
+					</colgroup>
+					<thead>
+						<tr class="success">
+							<td>编号</td>
+							<td>名字</td>
+							<td>年龄</td>
+							<td>学院</td>
+							<td>总学分成绩</td>
+							<td>学号</td>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="scroll table-body">
+				<table class="table">
+					<colgroup>
+					   <col class="col-xs-1"/>
+					   <col class="col-xs-2"/>
+					   <col class="col-xs-2"/>
+					   <col class="col-xs-2"/>
+					   <col class="col-xs-2"/>
+					   <col />
+					</colgroup>
+					<tbody>
+						<tr ng-repeat="item in gzzcData.gzzcs|filter:gzzcData.criteria" ng-click="changeChecked(item.id)">
+							<td><input type="checkbox" ng-model="item.checked" ng-click="changeChecked(item.id)"/></td>
+							<td>{{item.name}}</td>
+							<td>{{item.age}}</td>
+							<td>{{item.position}}<span class="{{gzzcData.judge(item.position)}}"></span></td>
+							<td>{{item.salary}}</td>
+							<td>{{item.telephone}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<br />
+		<div id="allSelect">
+			<label><input type="checkbox" ng-click="gzzcData.allSelect()"/>全选</label>
+		</div>
+		<center>
+			<div class="btn-group">
+				<button class="button button-plain button-pill button-small button-3d button-raised button-longshadow" ng-click="gzzcData.showChangeSalary()">调整学生分数</button>
+			</div>
+		</center>
+</div>
+
+ <!--模态框，弹出框来使用-->
+<div class="modal fade" id="gzzcModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bgcolor">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">
+					<center>{{gzzcData.modalTitle}}</center>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form action="javascript:void(0)" method="post" id="addForm" name="myForm">
+					<div class="input-group {{myForm.gzzcTime.$valid?'has-success':'has-error'}}">
+						<span class="input-group-addon">当前总学分成绩</span>
+						<input type="number" ng-model="gzzcData.newGzzc.salary" class="form-control" name="gzzcTime" readonly required>
+					</div>
+					<div class="input-group {{myForm.gzzcMoney.$valid?'has-success':'has-error'}}">
+						<span class="input-group-addon">增加学分</span>
+						<input type="number" ng-model="salary.upSalary" class="form-control" name="gzzcMoney" required>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button class="button-pill button-small bgcolor modal_button" ng-click="gzzcData.changeSalary(gzzcData.newGzzc.id)"
+				ng-disabled="myForm.$invalid">提交
+				</button>
+				<button class="button-pill button-small bgcolor modal_button" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
